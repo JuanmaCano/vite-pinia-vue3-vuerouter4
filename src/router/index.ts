@@ -1,17 +1,18 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router';
-import Home from '../views/Home.vue';
-import Counter from '../views/Counter.vue';
+//import Home from '../views/Home.vue';
+//import Counter from '../views/Counter.vue';
+import {defineAsyncComponent} from 'vue';
 
 const routes: RouteRecordRaw[] = [
 	{
 		path: '/',
 		name: 'home',
-		component: Home,
+		component: defineAsyncComponent(() => import('../views/Home.vue')),
 	},
 	{
 		path: '/counter',
 		name: 'counter',
-		component: Counter,
+		component: defineAsyncComponent(() => import('../views/Counter.vue')),
 	},
 ];
 
